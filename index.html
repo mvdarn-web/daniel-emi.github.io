@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Nuestra Historia</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: serif;
+  background: #111;
+  color: #eee;
+  text-align: center;
+}
+
+section {
+  max-width: 720px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+img {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background: #444;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  padding: 10px;
+  width: 200px;
+}
+</style>
+
+<script>
+const claveCorrecta = 05092018;
+
+function acceder() {
+  const ingreso = document.getElementById("clave").value;
+  if (ingreso === claveCorrecta) {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("contenido").style.display = "block";
+  } else {
+    alert("No es el lugar correcto.");
+  }
+}
+</script>
+
+</head>
+<body>
+
+<section id="login">
+  <p>Este lugar guarda recuerdos que solo pertenecen a nosotros.</p>
+  <input type="password" id="clave" placeholder="Clave">
+  <br><br>
+  <button onclick="acceder()">Entrar</button>
+</section>
+
+<section id="contenido" style="display:none">
+
+<h2>Para mi hijo</h2>
+
+<p>
+Si estás leyendo esto, es porque este código sigue vivo.<br><br>
+Aquí están algunos momentos de nuestras vidas,<br>
+no porque sean perfectos,<br>
+sino porque son nuestros.<br><br>
+— Papá
+</p>
+
+<br>
+
+<https://open.spotify.com/intl-es/track/476V2d6iA2tWXgQboKmTtA?si=86722eec4ae84c4e>
+Esta historia siempre sonó así
+</a>
+
+<img id="slide" src="foto1.jpg">
+
+<p style="margin-top:40px">
+Si algún día este lugar queda en silencio,<br>
+recuerda que lo importante nunca estuvo aquí,<br>
+sino en todo lo que vivimos afuera.
+</p>
+
+</section>
+
+<script>
+let fotos = ["foto1.jpg","foto2.jpg","foto3.jpg"];
+let i = 0;
+setInterval(() => {
+  i = (i + 1) % fotos.length;
+  document.getElementById("slide").src = fotos[i];
+}, 6000);
+</script>
+
+</body>
+</html>
