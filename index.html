@@ -5,46 +5,80 @@
 <title>Nuestra Historia</title>
 
 <style>
+/* Fondo general: cálido, sobrio, atemporal */
 body {
   margin: 0;
   font-family: Georgia, serif;
-  background: #1b1b1b;
-  color: #f0f0f0;
+  background: linear-gradient(180deg, #1c1a18 0%, #2f2b27 100%);
+  color: #f2f0ed;
   text-align: center;
+  min-height: 100vh;
 }
 
+/* Contenedor */
 .container {
-  max-width: 760px;
+  max-width: 780px;
   margin: auto;
   padding: 60px 20px;
 }
 
+/* Tarjetas (inicio y contenido) */
 .card {
-  background: #2a2a2a;
-  padding: 40px 20px;
-  border-radius: 10px;
+  background: rgba(0,0,0,0.45);
+  padding: 45px 25px;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
 }
 
+/* Textos */
+p {
+  line-height: 1.7;
+  font-size: 1.05em;
+}
+
+h2 {
+  font-weight: normal;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+
+/* Formulario */
 input {
   padding: 12px;
   width: 220px;
   text-align: center;
   font-size: 1em;
+  border-radius: 6px;
+  border: none;
 }
 
 button {
   margin-top: 20px;
-  padding: 12px 30px;
-  background: #6b5b4a;
-  color: white;
+  padding: 12px 34px;
+  background: #7a6652;
+  color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
+button:hover {
+  background: #8a745d;
+}
+
+/* Enlace música */
+a {
+  color: #d8c8a8;
+  text-decoration: none;
+  font-style: italic;
+}
+
+/* Imagen */
 img {
   width: 100%;
-  margin-top: 30px;
-  border-radius: 8px;
+  margin-top: 35px;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
 }
 </style>
 
@@ -67,15 +101,18 @@ function acceder() {
 
 <div class="container">
 
+  <!-- Pantalla de inicio -->
   <div id="login" class="card">
     <p>
-      Este lugar guarda recuerdos que solo pertenecen a nosotros.
+      Este lugar guarda recuerdos que solo pertenecen a nosotros.<br>
+      No todo el que llega debe entrar.
     </p>
     <input type="password" id="clave" placeholder="Clave">
     <br>
     <button onclick="acceder()">Entrar</button>
   </div>
 
+  <!-- Contenido -->
   <div id="contenido" class="card" style="display:none">
 
     <h2>Para mi hijo</h2>
@@ -84,19 +121,21 @@ function acceder() {
       Si estás leyendo esto, es porque este código sigue vivo.<br><br>
       Aquí están algunos momentos de nuestras vidas,<br>
       no porque sean perfectos,<br>
-      sino porque son nuestros.
+      sino porque son nuestros.<br><br>
+      El tiempo pasa, las personas cambian,<br>
+      pero el amor de un padre no necesita actualizarse.
     </p>
 
     <p>
       <a href="https://open.spotify.com/intl-es/track/476V2d6iA2tWXgQboKmTtA?si=78ba390a7efc4afe"
-         target="_blank" style="color:#d6c6a5">
+         target="_blank">
         Esta historia siempre sonó así
       </a>
     </p>
 
     <img id="slide" src="foto1.jpg">
 
-    <p style="margin-top:40px">
+    <p style="margin-top:50px">
       Si algún día este lugar queda en silencio,<br>
       recuerda que lo importante nunca estuvo aquí,<br>
       sino en todo lo que vivimos afuera.
