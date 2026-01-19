@@ -46,4 +46,126 @@ h2 {
   margin-bottom: 30px;
 }
 
-/* F*
+/* Formulario */
+input {
+  padding: 12px;
+  width: 220px;
+  text-align: center;
+  font-size: 1em;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255,255,255,0.85);
+  color: #333;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 34px;
+  background: linear-gradient(180deg, #3b8b91, #2f6d73);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95em;
+}
+
+button:hover {
+  background: linear-gradient(180deg, #4da1a8, #3b8b91);
+}
+
+/* Enlace música */
+a {
+  color: #e2f0e6;
+  text-decoration: none;
+  font-style: italic;
+}
+
+/* Imagen del slider */
+img {
+  width: 100%;
+  margin-top: 35px;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+  transition: opacity 1s;
+}
+</style>
+
+<script>
+const claveCorrecta = "05092018";
+
+function acceder() {
+  const ingreso = document.getElementById("clave").value.trim();
+  if (ingreso === claveCorrecta) {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("contenido").style.display = "block";
+  } else {
+    alert("No es el lugar correcto.");
+  }
+}
+</script>
+
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Pantalla de inicio -->
+  <div id="login" class="card">
+    <p>
+      Este lugar guarda recuerdos que solo pertenecen a nosotros.<br>
+      No todo el que llega debe entrar.
+    </p>
+    <input type="password" id="clave" placeholder="Clave">
+    <br>
+    <button onclick="acceder()">Entrar</button>
+  </div>
+
+  <!-- Contenido -->
+  <div id="contenido" class="card" style="display:none">
+
+    <h2>Para mi hijo</h2>
+
+    <p>
+      Si estás leyendo esto, es porque este código sigue vivo.<br><br>
+      Aquí están algunos momentos de nuestras vidas,<br>
+      no porque sean perfectos,<br>
+      sino porque son nuestros.<br><br>
+      El tiempo pasa, las personas cambian,<br>
+      pero el amor de un padre no necesita actualizarse.
+    </p>
+
+    <p>
+      <a href="https://open.spotify.com/intl-es/track/476V2d6iA2tWXgQboKmTtA?si=78ba390a7efc4afe"
+         target="_blank">
+        Esta historia siempre sonó así
+      </a>
+    </p>
+
+    <img id="slide" src="foto1.jpg">
+
+    <p style="margin-top:50px">
+      Si algún día este lugar queda en silencio,<br>
+      recuerda que lo importante nunca estuvo aquí,<br>
+      sino en todo lo que vivimos afuera.
+    </p>
+
+  </div>
+
+</div>
+
+<script>
+let fotos = [
+  "foto1.jpg","foto2.jpg","foto3.jpg","foto4.jpg","foto5.jpg",
+  "foto6.jpg","foto7.jpg","foto8.jpg","foto9.jpg","foto10.jpg",
+  "foto11.jpg","foto12.jpg","foto13.jpg","foto14.jpg","foto15.jpg"
+];
+
+let i = 0;
+setInterval(() => {
+  i = (i + 1) % fotos.length;
+  document.getElementById("slide").src = fotos[i];
+}, 7000);
+</script>
+
+</body>
+</html>
